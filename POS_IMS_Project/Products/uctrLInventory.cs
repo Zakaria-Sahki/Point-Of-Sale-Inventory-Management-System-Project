@@ -283,7 +283,9 @@ namespace POS_IMS_Project
 
         private void purchaseFromSupplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmPurchaseFromSupplier frm = new frmPurchaseFromSupplier((int)dgvProducts.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            RefreshPage();
         }
     }
 }

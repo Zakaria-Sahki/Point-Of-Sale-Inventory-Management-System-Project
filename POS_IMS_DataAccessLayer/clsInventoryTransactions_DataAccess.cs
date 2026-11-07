@@ -11,7 +11,42 @@ namespace POS_IMS_DataAccessLayer
     public class clsInventoryTransactions_DataAccess
     {
 
+        static public DataTable GetAllInventoryTransactionsByProductID(int ProductID)
+        {
 
+            DataTable dt = new DataTable();
+
+            try
+            {
+
+                using (SqlConnection Connection = new SqlConnection(clsSettingsDataAccess.ConnectionString))
+                {
+
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand("SP_DisplayInventoryTransactionByProductID", Connection))
+                    {
+                        Command.CommandType = CommandType.StoredProcedure;
+                        Command.Parameters.AddWithValue("@ProductID_FK", ProductID);
+
+                        using (SqlDataReader Reader = Command.ExecuteReader())
+                        {
+
+                            while (Reader.HasRows)
+                            {
+
+                                dt.Load(Reader);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+
+                Console.WriteLine("Database connection error: " + Ex.Message);
+            }
+            return dt;
+        }
         static public DataTable GetAllInventoryTransactions()
         {
 

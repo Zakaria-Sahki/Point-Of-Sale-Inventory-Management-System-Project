@@ -10,9 +10,11 @@ namespace POS_IMS_BusinessLayer
 {
     public class clsInventoryTransaction
     {
+        public static DataTable GetAllInventoryTransactionsByProductID(int ProductID)
+        {
 
-
-
+            return clsInventoryTransactions_DataAccess.GetAllInventoryTransactionsByProductID(ProductID);
+        }
         public static DataTable GetAllInventoryTransactions() { 
             
             return clsInventoryTransactions_DataAccess.GetAllInventoryTransactions();
