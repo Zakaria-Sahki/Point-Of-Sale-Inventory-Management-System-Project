@@ -90,5 +90,12 @@ namespace POS_IMS_Project
             frmProductInfo frm = new frmProductInfo(_productID);
             frm.ShowDialog();
         }
+
+        private void btnPurchaseProduct_Click(object sender, EventArgs e)
+        {
+            frmPurchaseOperation frm = new frmPurchaseOperation(_productID);
+            frm.ShowDialog();
+            RefreshPage();
+        }
     }
 }

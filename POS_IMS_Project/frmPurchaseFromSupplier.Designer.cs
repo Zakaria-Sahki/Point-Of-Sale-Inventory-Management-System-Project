@@ -108,6 +108,7 @@
             this.btnPurchaseProduct.TabIndex = 5;
             this.btnPurchaseProduct.Text = "Purchase ";
             this.btnPurchaseProduct.UseVisualStyleBackColor = false;
+            this.btnPurchaseProduct.Click += new System.EventHandler(this.btnPurchaseProduct_Click);
             // 
             // lblNumberOfTransaction
             // 
