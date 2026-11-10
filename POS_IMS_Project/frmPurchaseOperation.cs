@@ -49,5 +49,42 @@ namespace POS_IMS_Project
         {
             tabControl1.SelectedTab = tbPurchaseInfo;
         }
+
+        private void txtQuantityReceive_TextChanged(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtQuantityReceive.Text))
+            {
+                lblTotalPrice.Text = "DZD 0.00";
+                return;
+            }
+            else { 
+
+                int QuantityToRecive = int.Parse(txtQuantityReceive.Text);
+                lblTotalPrice.Text = "DZD " + (_product.PurchasePrice * QuantityToRecive).ToString("N2",
+                System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+            }
+        }
+
+        private void txtQuantityReceive_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        private void txtQuantityReceive_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtQuantityReceive.Text))
+            {
+
+                e.Cancel = true;
+                txtQuantityReceive.Focus();
+                errorProvider1.SetError(txtQuantityReceive, "Quantity to Receive Required!");
+                return;
+            }
+            else
+            {
+
+                errorProvider1.SetError(txtQuantityReceive, null);
+            }
+        }
     }
 }
