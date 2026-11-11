@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpSelectSupplier = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
+            this.uctrlFindSupplier1 = new POS_IMS_Project.uctrlFindSupplier();
             this.tbPurchaseInfo = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtQuantityReceive = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.uctrlFindSupplier1 = new POS_IMS_Project.uctrlFindSupplier();
             this.tabControl1.SuspendLayout();
             this.tpSelectSupplier.SuspendLayout();
             this.tbPurchaseInfo.SuspendLayout();
@@ -85,6 +85,15 @@
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // uctrlFindSupplier1
+            // 
+            this.uctrlFindSupplier1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            this.uctrlFindSupplier1.Location = new System.Drawing.Point(6, 6);
+            this.uctrlFindSupplier1.Name = "uctrlFindSupplier1";
+            this.uctrlFindSupplier1.Size = new System.Drawing.Size(1054, 585);
+            this.uctrlFindSupplier1.TabIndex = 0;
+            this.uctrlFindSupplier1.OnSupplierSelected += new System.Action<int>(this.uctrlFindSupplier1_OnSupplierSelected);
             // 
             // tbPurchaseInfo
             // 
@@ -130,6 +139,7 @@
             this.btnPurchase.TabIndex = 8;
             this.btnPurchase.Text = "Purchase";
             this.btnPurchase.UseVisualStyleBackColor = false;
+            this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             // 
             // lblUnitPrice
             // 
@@ -225,14 +235,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // uctrlFindSupplier1
-            // 
-            this.uctrlFindSupplier1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.uctrlFindSupplier1.Location = new System.Drawing.Point(6, 6);
-            this.uctrlFindSupplier1.Name = "uctrlFindSupplier1";
-            this.uctrlFindSupplier1.Size = new System.Drawing.Size(1054, 585);
-            this.uctrlFindSupplier1.TabIndex = 0;
             // 
             // frmPurchaseOperation
             // 

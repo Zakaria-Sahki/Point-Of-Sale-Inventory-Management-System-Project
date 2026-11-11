@@ -13,6 +13,19 @@ namespace POS_IMS_Project
 {
     public partial class uctrlFindSupplier : UserControl
     {
+        private clsSuppliers _supplier;
+
+        public event Action<int> OnSupplierSelected;
+        // Create a protected method to raise the event with a parameter
+        protected virtual void SupplierSelected(int SupplierID)
+        {
+            Action<int> handler = OnSupplierSelected;
+            if (handler != null)
+            {
+                handler(SupplierID); // Raise the event with the parameter
+            }
+        }
+
         public uctrlFindSupplier()
         {
             InitializeComponent();
@@ -38,6 +51,12 @@ namespace POS_IMS_Project
             }
 
             ctrlSupplierInfo1.DisplaySupplierInfo(Convert.ToInt32(txtSearch.Text.Trim()));
+            _supplier = clsSuppliers.GetSupplierByID(Convert.ToInt32(txtSearch.Text.Trim()));
+            if (OnSupplierSelected != null)
+            {
+
+                OnSupplierSelected(_supplier.SupplierID);
+            }
         }
         private void txtSearch_Validating(object sender, CancelEventArgs e)
         {
@@ -66,6 +85,11 @@ namespace POS_IMS_Project
         private bool IsSupplierExist(int SupplierID) { 
             
             return clsSuppliers.IsSupplierWithSupplierIDExist(SupplierID);
+        }   
+        public void DisableControls()
+        {
+            txtSearch.Enabled = false;
+            btnSearch.Enabled = false;
         }
     }
 }

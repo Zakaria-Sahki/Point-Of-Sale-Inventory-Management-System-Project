@@ -15,6 +15,8 @@ namespace POS_IMS_Project
     {
         private int _productID;
         private clsProduct _product;
+        private int _SupplierID = -1;
+        private clsSuppliers _supplier;
 
         public frmPurchaseOperation(int ProductID)
         {
@@ -72,19 +74,40 @@ namespace POS_IMS_Project
         }
         private void txtQuantityReceive_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtQuantityReceive.Text))
-            {
+            //if (string.IsNullOrWhiteSpace(txtQuantityReceive.Text))
+            //{
 
-                e.Cancel = true;
-                txtQuantityReceive.Focus();
-                errorProvider1.SetError(txtQuantityReceive, "Quantity to Receive Required!");
+            //    e.Cancel = true;
+            //    txtQuantityReceive.Focus();
+            //    errorProvider1.SetError(txtQuantityReceive, "Quantity to Receive Required!");
+            //    return;
+            //}
+            //else
+            //{
+
+            //    errorProvider1.SetError(txtQuantityReceive, null);
+            //}
+        }
+        private void uctrlFindSupplier1_OnSupplierSelected(int obj)
+        {
+            _SupplierID = obj;
+            
+            _supplier = clsSuppliers.GetSupplierByID(_SupplierID);
+            if (_supplier == null) { 
+            
+                MessageBox.Show("Supplier not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _SupplierID = -1;
+                txtQuantityReceive.Enabled = false;
                 return;
             }
-            else
-            {
 
-                errorProvider1.SetError(txtQuantityReceive, null);
-            }
+            uctrlFindSupplier1.DisableControls();
+            txtQuantityReceive.Enabled = true;
+        }
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
