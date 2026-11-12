@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static POS_IMS_Project.uctrlPointOfSale;
 
 namespace POS_IMS_Project
 {
@@ -17,6 +18,9 @@ namespace POS_IMS_Project
         private clsProduct _product;
         private int _SupplierID = -1;
         private clsSuppliers _supplier;
+        private decimal TotalAmount = 0;
+        private int _quantityToRecive;
+        private decimal _unitPrice;
 
         public frmPurchaseOperation(int ProductID)
         {
@@ -36,10 +40,11 @@ namespace POS_IMS_Project
                 return;
             }
 
-
+            
             lblProductName.Text = _product.ProductName;
-            lblUnitPrice.Text = "DZD " + _product.PurchasePrice.ToString("N2",
-            System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+            txtQuantityReceive.Enabled = false;
+            txtUnitPrice.Enabled = false;
+            tbPurchaseInfo.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -57,17 +62,17 @@ namespace POS_IMS_Project
 
             if (string.IsNullOrWhiteSpace(txtQuantityReceive.Text))
             {
+                TotalAmount = 0;
                 lblTotalPrice.Text = "DZD 0.00";
                 return;
             }
-            else { 
+            else {
 
-                int QuantityToRecive = int.Parse(txtQuantityReceive.Text);
-                lblTotalPrice.Text = "DZD " + (_product.PurchasePrice * QuantityToRecive).ToString("N2",
-                System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+                _quantityToRecive = int.Parse(txtQuantityReceive.Text);
+                TotalAmount = _unitPrice * _quantityToRecive;
+                lblTotalPrice.Text = "DZD " + TotalAmount.ToString("N2", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
             }
         }
-
         private void txtQuantityReceive_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -98,16 +103,65 @@ namespace POS_IMS_Project
                 MessageBox.Show("Supplier not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _SupplierID = -1;
                 txtQuantityReceive.Enabled = false;
+                tbPurchaseInfo.Enabled = false;
+                txtUnitPrice.Enabled = false;
                 return;
             }
 
             uctrlFindSupplier1.DisableControls();
             txtQuantityReceive.Enabled = true;
+            tbPurchaseInfo.Enabled = true;
+            txtUnitPrice.Enabled = true;
         }
 
         private void btnPurchase_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(txtUnitPrice.Text.Trim()))
+            {
+
+                MessageBox.Show("Please enter the unit price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtQuantityReceive.Text.Trim())) { 
+                
+                MessageBox.Show("Please enter the quantity to receive.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            int PurchaseID = clsPurchaseInvoice.LogPurchaseInvoice(_SupplierID, 2, TotalAmount);
+            if (PurchaseID > 0)
+            {
+                if (!clsTransactionOperations.LogNewPurchaseTransaction(PurchaseID, _product.ProductID, 2, _unitPrice, 2))
+                {
+
+                    MessageBox.Show("Data failed to save.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }  
+            }
+        }
+
+        private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',';
+        }
+
+        private void txtUnitPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtUnitPrice.Text))
+            {
+                _unitPrice = 0;
+                lblTotalPrice.Text = "DZD 0.00";
+                return;
+            }
+            else
+            {
+
+                _unitPrice = decimal.TryParse(txtUnitPrice.Text, out decimal price) ? price : 0;
+                TotalAmount = _unitPrice * _quantityToRecive;
+                lblTotalPrice.Text = "DZD " + TotalAmount.ToString("N2", System.Globalization.CultureInfo.GetCultureInfo("en-US"));
+            }
         }
     }
 }

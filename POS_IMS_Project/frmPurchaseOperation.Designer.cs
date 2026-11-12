@@ -34,9 +34,9 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.uctrlFindSupplier1 = new POS_IMS_Project.uctrlFindSupplier();
             this.tbPurchaseInfo = new System.Windows.Forms.TabPage();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
-            this.lblUnitPrice = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -98,9 +98,9 @@
             // tbPurchaseInfo
             // 
             this.tbPurchaseInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            this.tbPurchaseInfo.Controls.Add(this.txtUnitPrice);
             this.tbPurchaseInfo.Controls.Add(this.btnCancel);
             this.tbPurchaseInfo.Controls.Add(this.btnPurchase);
-            this.tbPurchaseInfo.Controls.Add(this.lblUnitPrice);
             this.tbPurchaseInfo.Controls.Add(this.label7);
             this.tbPurchaseInfo.Controls.Add(this.lblProductName);
             this.tbPurchaseInfo.Controls.Add(this.label5);
@@ -114,6 +114,19 @@
             this.tbPurchaseInfo.Size = new System.Drawing.Size(1071, 688);
             this.tbPurchaseInfo.TabIndex = 1;
             this.tbPurchaseInfo.Text = "Purchase Info";
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnitPrice.Enabled = false;
+            this.txtUnitPrice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitPrice.Location = new System.Drawing.Point(582, 211);
+            this.txtUnitPrice.MaxLength = 6;
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(266, 37);
+            this.txtUnitPrice.TabIndex = 0;
+            this.txtUnitPrice.TextChanged += new System.EventHandler(this.txtUnitPrice_TextChanged);
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
             // 
             // btnCancel
             // 
@@ -140,17 +153,6 @@
             this.btnPurchase.Text = "Purchase";
             this.btnPurchase.UseVisualStyleBackColor = false;
             this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
-            // 
-            // lblUnitPrice
-            // 
-            this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.lblUnitPrice.Location = new System.Drawing.Point(576, 212);
-            this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(72, 35);
-            this.lblUnitPrice.TabIndex = 7;
-            this.lblUnitPrice.Text = "[xxx]";
             // 
             // label7
             // 
@@ -227,7 +229,7 @@
             this.txtQuantityReceive.MaxLength = 6;
             this.txtQuantityReceive.Name = "txtQuantityReceive";
             this.txtQuantityReceive.Size = new System.Drawing.Size(266, 37);
-            this.txtQuantityReceive.TabIndex = 0;
+            this.txtQuantityReceive.TabIndex = 10;
             this.txtQuantityReceive.TextChanged += new System.EventHandler(this.txtQuantityReceive_TextChanged);
             this.txtQuantityReceive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantityReceive_KeyPress);
             this.txtQuantityReceive.Validating += new System.ComponentModel.CancelEventHandler(this.txtQuantityReceive_Validating);
@@ -263,7 +265,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.TextBox txtQuantityReceive;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblUnitPrice;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label label5;
@@ -272,5 +273,6 @@
         private System.Windows.Forms.Button btnPurchase;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtUnitPrice;
     }
 }
