@@ -62,6 +62,7 @@ namespace POS_IMS_Project
 
             if (string.IsNullOrWhiteSpace(txtQuantityReceive.Text))
             {
+                _quantityToRecive = 0;
                 TotalAmount = 0;
                 lblTotalPrice.Text = "DZD 0.00";
                 return;
@@ -133,7 +134,7 @@ namespace POS_IMS_Project
             int PurchaseID = clsPurchaseInvoice.LogPurchaseInvoice(_SupplierID, 2, TotalAmount);
             if (PurchaseID > 0)
             {
-                if (!clsTransactionOperations.LogNewPurchaseTransaction(PurchaseID, _product.ProductID, 2, _unitPrice, 2))
+                if (!clsTransactionOperations.LogNewPurchaseTransaction(PurchaseID, _product.ProductID, _quantityToRecive, _unitPrice, 2))
                 {
 
                     MessageBox.Show("Data failed to save.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -146,12 +147,12 @@ namespace POS_IMS_Project
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',';
         }
-
         private void txtUnitPrice_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUnitPrice.Text))
             {
                 _unitPrice = 0;
+                TotalAmount = 0;
                 lblTotalPrice.Text = "DZD 0.00";
                 return;
             }
