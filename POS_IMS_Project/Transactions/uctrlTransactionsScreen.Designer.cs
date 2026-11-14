@@ -30,37 +30,37 @@
         {
             this.pnlPurchases = new System.Windows.Forms.Panel();
             this.lblPurchases = new System.Windows.Forms.Label();
+            this.pbPurchases = new System.Windows.Forms.PictureBox();
             this.pnlSales = new System.Windows.Forms.Panel();
             this.lblSales = new System.Windows.Forms.Label();
+            this.pbSales = new System.Windows.Forms.PictureBox();
             this.pnlTransactions = new System.Windows.Forms.Panel();
             this.lbltransactions = new System.Windows.Forms.Label();
-            this.pnlTodayRevenue = new System.Windows.Forms.Panel();
-            this.pnlWeekRevenue = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbtransactions = new System.Windows.Forms.PictureBox();
-            this.pbSales = new System.Windows.Forms.PictureBox();
-            this.pbPurchases = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pnlTodayRevenue = new System.Windows.Forms.Panel();
             this.lblTodayRevenue = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlWeekRevenue = new System.Windows.Forms.Panel();
             this.lblWeekRevenue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lblTodayTransactionCount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pnlPurchases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPurchases)).BeginInit();
             this.pnlSales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSales)).BeginInit();
             this.pnlTransactions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtransactions)).BeginInit();
             this.pnlTodayRevenue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlWeekRevenue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbtransactions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSales)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPurchases)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPurchases
@@ -73,6 +73,7 @@
             this.pnlPurchases.Name = "pnlPurchases";
             this.pnlPurchases.Size = new System.Drawing.Size(706, 151);
             this.pnlPurchases.TabIndex = 3;
+            this.pnlPurchases.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPurchases_Paint);
             // 
             // lblPurchases
             // 
@@ -84,6 +85,16 @@
             this.lblPurchases.Size = new System.Drawing.Size(187, 49);
             this.lblPurchases.TabIndex = 1;
             this.lblPurchases.Text = "Purchases";
+            // 
+            // pbPurchases
+            // 
+            this.pbPurchases.Image = global::POS_IMS_Project.Properties.Resources.icons8_initiate_money_transfer_96;
+            this.pbPurchases.Location = new System.Drawing.Point(48, 27);
+            this.pbPurchases.Name = "pbPurchases";
+            this.pbPurchases.Size = new System.Drawing.Size(91, 91);
+            this.pbPurchases.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPurchases.TabIndex = 0;
+            this.pbPurchases.TabStop = false;
             // 
             // pnlSales
             // 
@@ -107,6 +118,16 @@
             this.lblSales.TabIndex = 1;
             this.lblSales.Text = "Sales";
             // 
+            // pbSales
+            // 
+            this.pbSales.Image = global::POS_IMS_Project.Properties.Resources.icons8_request_money_96;
+            this.pbSales.Location = new System.Drawing.Point(48, 27);
+            this.pbSales.Name = "pbSales";
+            this.pbSales.Size = new System.Drawing.Size(91, 91);
+            this.pbSales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSales.TabIndex = 0;
+            this.pbSales.TabStop = false;
+            // 
             // pnlTransactions
             // 
             this.pnlTransactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
@@ -129,6 +150,16 @@
             this.lbltransactions.TabIndex = 1;
             this.lbltransactions.Text = "Transactions";
             // 
+            // pbtransactions
+            // 
+            this.pbtransactions.Image = global::POS_IMS_Project.Properties.Resources.icons8_summary_list_96;
+            this.pbtransactions.Location = new System.Drawing.Point(48, 27);
+            this.pbtransactions.Name = "pbtransactions";
+            this.pbtransactions.Size = new System.Drawing.Size(91, 91);
+            this.pbtransactions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbtransactions.TabIndex = 0;
+            this.pbtransactions.TabStop = false;
+            // 
             // pnlTodayRevenue
             // 
             this.pnlTodayRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
@@ -140,6 +171,38 @@
             this.pnlTodayRevenue.Name = "pnlTodayRevenue";
             this.pnlTodayRevenue.Size = new System.Drawing.Size(381, 247);
             this.pnlTodayRevenue.TabIndex = 5;
+            // 
+            // lblTodayRevenue
+            // 
+            this.lblTodayRevenue.AutoSize = true;
+            this.lblTodayRevenue.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.lblTodayRevenue.Location = new System.Drawing.Point(61, 148);
+            this.lblTodayRevenue.Name = "lblTodayRevenue";
+            this.lblTodayRevenue.Size = new System.Drawing.Size(253, 44);
+            this.lblTodayRevenue.TabIndex = 2;
+            this.lblTodayRevenue.Text = "DZD xxxxxxx.xx";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.label1.Location = new System.Drawing.Point(125, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(180, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Today\'s Revenue";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::POS_IMS_Project.Properties.Resources.money_bag;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlWeekRevenue
             // 
@@ -153,88 +216,16 @@
             this.pnlWeekRevenue.Size = new System.Drawing.Size(381, 247);
             this.pnlWeekRevenue.TabIndex = 6;
             // 
-            // panel3
+            // lblWeekRevenue
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblTodayTransactionCount);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Location = new System.Drawing.Point(1169, 52);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(381, 247);
-            this.panel3.TabIndex = 6;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::POS_IMS_Project.Properties.Resources.exchange;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 24);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::POS_IMS_Project.Properties.Resources.revenue;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 24);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::POS_IMS_Project.Properties.Resources.money_bag;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbtransactions
-            // 
-            this.pbtransactions.Image = global::POS_IMS_Project.Properties.Resources.icons8_summary_list_96;
-            this.pbtransactions.Location = new System.Drawing.Point(48, 27);
-            this.pbtransactions.Name = "pbtransactions";
-            this.pbtransactions.Size = new System.Drawing.Size(91, 91);
-            this.pbtransactions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbtransactions.TabIndex = 0;
-            this.pbtransactions.TabStop = false;
-            // 
-            // pbSales
-            // 
-            this.pbSales.Image = global::POS_IMS_Project.Properties.Resources.icons8_request_money_96;
-            this.pbSales.Location = new System.Drawing.Point(48, 27);
-            this.pbSales.Name = "pbSales";
-            this.pbSales.Size = new System.Drawing.Size(91, 91);
-            this.pbSales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSales.TabIndex = 0;
-            this.pbSales.TabStop = false;
-            // 
-            // pbPurchases
-            // 
-            this.pbPurchases.Image = global::POS_IMS_Project.Properties.Resources.icons8_initiate_money_transfer_96;
-            this.pbPurchases.Location = new System.Drawing.Point(48, 27);
-            this.pbPurchases.Name = "pbPurchases";
-            this.pbPurchases.Size = new System.Drawing.Size(91, 91);
-            this.pbPurchases.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPurchases.TabIndex = 0;
-            this.pbPurchases.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.label1.Location = new System.Drawing.Point(125, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Today\'s Revenue";
+            this.lblWeekRevenue.AutoSize = true;
+            this.lblWeekRevenue.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWeekRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.lblWeekRevenue.Location = new System.Drawing.Point(66, 148);
+            this.lblWeekRevenue.Name = "lblWeekRevenue";
+            this.lblWeekRevenue.Size = new System.Drawing.Size(253, 44);
+            this.lblWeekRevenue.TabIndex = 3;
+            this.lblWeekRevenue.Text = "DZD xxxxxxx.xx";
             // 
             // label2
             // 
@@ -247,38 +238,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Week Revenue";
             // 
-            // label3
+            // pictureBox2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.label3.Location = new System.Drawing.Point(125, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Transactions Today";
+            this.pictureBox2.Image = global::POS_IMS_Project.Properties.Resources.revenue;
+            this.pictureBox2.Location = new System.Drawing.Point(27, 24);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
-            // lblTodayRevenue
+            // panel3
             // 
-            this.lblTodayRevenue.AutoSize = true;
-            this.lblTodayRevenue.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodayRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.lblTodayRevenue.Location = new System.Drawing.Point(61, 148);
-            this.lblTodayRevenue.Name = "lblTodayRevenue";
-            this.lblTodayRevenue.Size = new System.Drawing.Size(253, 44);
-            this.lblTodayRevenue.TabIndex = 2;
-            this.lblTodayRevenue.Text = "DZD xxxxxxx.xx";
-            // 
-            // lblWeekRevenue
-            // 
-            this.lblWeekRevenue.AutoSize = true;
-            this.lblWeekRevenue.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWeekRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
-            this.lblWeekRevenue.Location = new System.Drawing.Point(66, 148);
-            this.lblWeekRevenue.Name = "lblWeekRevenue";
-            this.lblWeekRevenue.Size = new System.Drawing.Size(253, 44);
-            this.lblWeekRevenue.TabIndex = 3;
-            this.lblWeekRevenue.Text = "DZD xxxxxxx.xx";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblTodayTransactionCount);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Location = new System.Drawing.Point(1169, 52);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(381, 247);
+            this.panel3.TabIndex = 6;
             // 
             // lblTodayTransactionCount
             // 
@@ -290,6 +270,27 @@
             this.lblTodayTransactionCount.Size = new System.Drawing.Size(79, 44);
             this.lblTodayTransactionCount.TabIndex = 4;
             this.lblTodayTransactionCount.Text = "XXX";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.label3.Location = new System.Drawing.Point(125, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 29);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Transactions Today";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::POS_IMS_Project.Properties.Resources.exchange;
+            this.pictureBox3.Location = new System.Drawing.Point(27, 24);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // uctrlTransactionsScreen
             // 
@@ -307,22 +308,22 @@
             this.Load += new System.EventHandler(this.uctrlTransactionsScreen_Load);
             this.pnlPurchases.ResumeLayout(false);
             this.pnlPurchases.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPurchases)).EndInit();
             this.pnlSales.ResumeLayout(false);
             this.pnlSales.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSales)).EndInit();
             this.pnlTransactions.ResumeLayout(false);
             this.pnlTransactions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtransactions)).EndInit();
             this.pnlTodayRevenue.ResumeLayout(false);
             this.pnlTodayRevenue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlWeekRevenue.ResumeLayout(false);
             this.pnlWeekRevenue.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbtransactions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSales)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPurchases)).EndInit();
             this.ResumeLayout(false);
 
         }

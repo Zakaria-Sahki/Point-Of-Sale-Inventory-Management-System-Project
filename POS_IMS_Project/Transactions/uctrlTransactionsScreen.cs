@@ -1,4 +1,5 @@
 ﻿using POS_IMS_BusinessLayer;
+using POS_IMS_Project.Transactions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,11 @@ namespace POS_IMS_Project
             lblSales.Click += SalesButton_Click;
             pbSales.Click += SalesButton_Click;
 
+            pnlPurchases.Click += PurchaseButton_Click;
+            lblPurchases.Click += PurchaseButton_Click;
+            pbPurchases.Click += PurchaseButton_Click;
+
+
             // Mouse Move
             pnlTransactions.MouseMove += TransactionsButton_MouseMove;
             lbltransactions.MouseMove += TransactionsButton_MouseMove;
@@ -54,6 +60,12 @@ namespace POS_IMS_Project
             pnlSales.MouseLeave += SalesButton_MouseLeave;
             lblSales.MouseLeave += SalesButton_MouseLeave;
             pbSales.MouseLeave += SalesButton_MouseLeave;
+        }
+
+        private void PurchaseButton_Click(object sender, EventArgs e)
+        {
+            frmPurchasesManagement frm = new frmPurchasesManagement();
+            frm.ShowDialog();
         }
 
         private void TransactionsButton_Click(object sender, EventArgs e)
@@ -127,6 +139,11 @@ namespace POS_IMS_Project
         private void uctrlTransactionsScreen_Load(object sender, EventArgs e)
         {
             RefreshCards();
+        }
+
+        private void pnlPurchases_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -119,6 +119,12 @@
     <Compile Include="frmSaleInvoiceDetails.Designer.cs">
       <DependentUpon>frmSaleInvoiceDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\frmPurchasesManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmPurchasesManagement.Designer.cs">
+      <DependentUpon>frmPurchasesManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\frmSalesManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +396,9 @@
     <EmbeddedResource Include="frmSaleInvoiceDetails.resx">
       <DependentUpon>frmSaleInvoiceDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmPurchasesManagement.resx">
+      <DependentUpon>frmPurchasesManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmSalesManagement.resx">
       <DependentUpon>frmSalesManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,6 +621,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sales-tax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchasing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

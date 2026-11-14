@@ -59,11 +59,6 @@ namespace POS_IMS_Project
             dtpStartDate.MaxDate = DateTime.Today;
             dtpEndDate.MaxDate = DateTime.Today;
         }
-
-
-
-
-
         private void ApplyingFilter()
         {
 
@@ -116,7 +111,6 @@ namespace POS_IMS_Project
         {
             ApplyingFilter();
         }
-
         private void saleInvoiceDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSaleInvoiceDetails frm = new frmSaleInvoiceDetails((int)dgvSalesInvoices.CurrentRow.Cells[0].Value);
