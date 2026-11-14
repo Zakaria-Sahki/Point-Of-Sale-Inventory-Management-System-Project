@@ -101,16 +101,16 @@
     <Compile Include="Categories\frmFindCategory.Designer.cs">
       <DependentUpon>frmFindCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPurchaseFromSupplier.cs">
+    <Compile Include="Products\Purchase Operation\frmPurchaseFromSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPurchaseFromSupplier.Designer.cs">
+    <Compile Include="Products\Purchase Operation\frmPurchaseFromSupplier.Designer.cs">
       <DependentUpon>frmPurchaseFromSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPurchaseOperation.cs">
+    <Compile Include="Products\Purchase Operation\frmPurchaseOperation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPurchaseOperation.Designer.cs">
+    <Compile Include="Products\Purchase Operation\frmPurchaseOperation.Designer.cs">
       <DependentUpon>frmPurchaseOperation.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSaleInvoiceDetails.cs">
@@ -381,10 +381,10 @@
     <EmbeddedResource Include="Categories\frmFindCategory.resx">
       <DependentUpon>frmFindCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPurchaseFromSupplier.resx">
+    <EmbeddedResource Include="Products\Purchase Operation\frmPurchaseFromSupplier.resx">
       <DependentUpon>frmPurchaseFromSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPurchaseOperation.resx">
+    <EmbeddedResource Include="Products\Purchase Operation\frmPurchaseOperation.resx">
       <DependentUpon>frmPurchaseOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSaleInvoiceDetails.resx">
