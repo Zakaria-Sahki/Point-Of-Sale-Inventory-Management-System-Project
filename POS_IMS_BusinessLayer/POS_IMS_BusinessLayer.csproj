@@ -46,6 +46,7 @@
     <Compile Include="clsBrands.cs" />
     <Compile Include="clsCategory.cs" />
     <Compile Include="clsCustomers.cs" />
+    <Compile Include="clsDashboard.cs" />
     <Compile Include="clsDocumentTypes.cs" />
     <Compile Include="clsInventoryTransaction.cs" />
     <Compile Include="clsPeople.cs" />
