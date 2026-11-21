@@ -54,25 +54,28 @@ ORDER BY YEAR(SaleDate), MONTH(SaleDate);";
                 using (SqlConnection connection = new SqlConnection(clsSettingsDataAccess.ConnectionString))
                 {
                     connection.Open();
-                    using (SqlCommand command = new SqlCommand("GetStockStatistics", connection))
+                using (SqlCommand command = new SqlCommand("GetStockStatistics", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    connection.OpenAsync();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        if (reader.Read())
                         {
-                            if (reader.Read())
-                            {
-                                statistics.HealthyStock =
-                                    Convert.ToInt32(reader["HealthyStock"]);
+                            statistics.HealthyStock =
+                                Convert.ToInt32(reader["HealthyStock"]);
 
-                                statistics.LowStock =
-                                    Convert.ToInt32(reader["LowStock"]);
+                            statistics.LowStock =
+                                Convert.ToInt32(reader["LowStock"]);
 
-                                statistics.OutOfStock =
-                                    Convert.ToInt32(reader["OutOfStock"]);
-                            }
+                            statistics.OutOfStock =
+                                Convert.ToInt32(reader["OutOfStock"]);
                         }
                     }
                 }
+            }
             }
             catch (Exception Ex) {
 
@@ -88,20 +91,22 @@ ORDER BY YEAR(SaleDate), MONTH(SaleDate);";
                 using (SqlConnection connection = new SqlConnection(clsSettingsDataAccess.ConnectionString))
                 {
                     connection.Open();
-                    using (SqlCommand command = new SqlCommand("SP_GetSalesByCategoryReports", connection))
+            using (SqlCommand command = new SqlCommand("SP_GetSalesByCategoryReports", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        result.Add(new SalesByCategory
                         {
-                            while (reader.Read())
-                            {
-                                result.Add(new SalesByCategory
-                                {
-                                    CategoryName = Convert.ToString(reader["CategoryName"]),
-                                    Percentage = Convert.ToSingle(reader["Percentage"])
-                                });
-                            }
-                        }
+                            CategoryName = Convert.ToString(reader["CategoryName"]),
+                            Percentage = Convert.ToSingle(reader["Percentage"])
+                        });
+                    }
+                }
                     }
                 }
 
