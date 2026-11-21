@@ -625,5 +625,8 @@
   <ItemGroup>
     <None Include="Resources\purchasing.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dashboard\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

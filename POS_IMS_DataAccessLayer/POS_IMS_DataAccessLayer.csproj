@@ -45,6 +45,7 @@
     <Compile Include="clsBrands_DataAccess.cs" />
     <Compile Include="clsCategories_DataAccess.cs" />
     <Compile Include="clsCustomers_DataAcceess.cs" />
+    <Compile Include="clsDashboard_DataAccess.cs" />
     <Compile Include="clsDocumentTypes_DataAccess.cs" />
     <Compile Include="clsInventoryTransactions_DataAccess.cs" />
     <Compile Include="clsPeople_DataAccess.cs" />
@@ -59,6 +60,9 @@
     <Compile Include="clsTransactionOperations_DataAccess.cs" />
     <Compile Include="clsTransactionTypes_DataAccess.cs" />
     <Compile Include="clsUsers_DataAccess.cs" />
+    <Compile Include="Models\MonthlyRevenue.cs" />
+    <Compile Include="Models\SalesByCategory.cs" />
+    <Compile Include="Models\StockStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
