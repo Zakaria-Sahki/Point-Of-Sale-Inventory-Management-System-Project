@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using POS_IMS_DataAccessLayer.Models;
+using DTOS.Models;
 
 namespace POS_IMS_DataAccessLayer
 {
@@ -15,35 +16,35 @@ namespace POS_IMS_DataAccessLayer
         static public List<MonthlyRevenue> GetMonthlyRevenue(int year)
         {
             var result = new List<MonthlyRevenue>();
-            string ConnectionString = "Server=.;Database=POSInventoryDB;User ID=sa;Password=sa123456;Encrypt=False;TrustServerCertificate=True;";
+            try {
 
-            string query = @"
-            SELECT YEAR(SaleDate) AS SalesFromYear, MONTH(SaleDate) AS SalesOfMonth, SUM(TotalAmount) AS TotalRevenue FROM SaleInvoices
-WHERE YEAR(SaleDate) = @Year
-GROUP BY YEAR(SaleDate), MONTH(SaleDate)
-ORDER BY YEAR(SaleDate), MONTH(SaleDate);";
+                using(SqlConnection connection = new SqlConnection(clsSettingsDataAccess.ConnectionString)) {
 
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@Year", year);
+                    connection.Open();
 
-                connection.Open();
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
+                    using (SqlCommand command = new SqlCommand("SP_MonthlyRevenueStatistics", connection))
                     {
-                        result.Add(new MonthlyRevenue
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@Year", year);
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            //SalesFromYear = Convert.ToInt32(reader["SalesFromYear"]),
-                            Month = Convert.ToInt32(reader["SalesOfMonth"]),
-                            Revenue = Convert.ToDouble(reader["TotalRevenue"])
-                        });
+                            while (reader.Read())
+                            {
+                                result.Add(new MonthlyRevenue
+                                {
+                                    //SalesFromYear = Convert.ToInt32(reader["SalesFromYear"]),
+                                    Month = Convert.ToInt32(reader["SalesOfMonth"]),
+                                    Revenue = Convert.ToDouble(reader["TotalRevenue"])
+                                });
+                            }
+                        }
                     }
                 }
-            }
+            } catch (Exception ex) {
 
+                result = null;
+            }
+            
             return result;
         }
         static public StockStatistics GetStockStatisticsAsync()

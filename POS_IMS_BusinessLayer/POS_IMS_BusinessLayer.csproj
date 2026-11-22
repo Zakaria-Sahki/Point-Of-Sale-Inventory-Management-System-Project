@@ -63,6 +63,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{83f8327b-f534-4bfb-a6c9-1389ea2d6aa4}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\POS_IMS_DataAccessLayer\POS_IMS_DataAccessLayer.csproj">
       <Project>{0b3017e1-21b7-4d6c-8853-34eb692a1448}</Project>
       <Name>POS_IMS_DataAccessLayer</Name>

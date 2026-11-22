@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POS_IMS_DataAccessLayer.Models
+namespace DTOS.Models
 {
     public class SalesByCategory
     {

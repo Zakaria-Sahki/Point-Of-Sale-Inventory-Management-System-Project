@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using POS_IMS_DataAccessLayer;
-using POS_IMS_DataAccessLayer.Models;
+using DTOS.Models;
 
 namespace POS_IMS_BusinessLayer
 {

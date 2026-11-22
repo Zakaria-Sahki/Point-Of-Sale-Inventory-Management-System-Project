@@ -60,10 +60,13 @@
     <Compile Include="clsTransactionOperations_DataAccess.cs" />
     <Compile Include="clsTransactionTypes_DataAccess.cs" />
     <Compile Include="clsUsers_DataAccess.cs" />
-    <Compile Include="Models\MonthlyRevenue.cs" />
-    <Compile Include="Models\SalesByCategory.cs" />
-    <Compile Include="Models\StockStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{83f8327b-f534-4bfb-a6c9-1389ea2d6aa4}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
