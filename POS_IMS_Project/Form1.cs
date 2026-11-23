@@ -28,6 +28,9 @@ namespace POS_IMS_Project
         private void Form1_Load(object sender, EventArgs e)
         {
             string Time = DateTime.Now.ToString("HH:mm");
+            LoadUserControl(new uctrlDashboard());
+            SideBarActivation(enSideBarMenue.Dashboard);
+            lblCurrentDashboard.Text = "Dashboard";
         }
         private void ResetSideBarColors() {
 
@@ -116,37 +119,6 @@ namespace POS_IMS_Project
             }
         
         }
-        private void btnDashboard_MouseUp(object sender, MouseEventArgs e)
-        {
-            SideBarActivation(enSideBarMenue.Dashboard);
-            lblCurrentDashboard.Text = "Dashboard";
-        }
-        private void btnPointOfSale_MouseUp(object sender, MouseEventArgs e)
-        {
-            SideBarActivation(enSideBarMenue.POS);
-            lblCurrentDashboard.Text = "POS";
-
-        }
-        private void btnInventory_MouseUp(object sender, MouseEventArgs e)
-        {
-            SideBarActivation(enSideBarMenue.Inventory);
-            lblCurrentDashboard.Text = "Inventory";
-
-        }
-        private void btnTransactions_MouseUp(object sender, MouseEventArgs e)
-        {
-            SideBarActivation(enSideBarMenue.Transaction);
-            lblCurrentDashboard.Text = "Transaction";
-
-        }
-        private void btnSuppliers_MouseUp(object sender, MouseEventArgs e)
-        {
-            SideBarActivation(enSideBarMenue.Suppliers);
-            lblCurrentDashboard.Text = "Suppliers";
-        }
-
-        
-        
         private void LoadUserControl(UserControl Usercontrol) {
 
             ContentPanel.Controls.Clear();
@@ -154,9 +126,6 @@ namespace POS_IMS_Project
             
             ContentPanel.Controls.Add(Usercontrol);
         }
-
-
-
         private void btnPeople_Click(object sender, EventArgs e)
         {
             if (CurrentMenue != enSideBarMenue.People)
@@ -210,7 +179,6 @@ namespace POS_IMS_Project
             SideBarActivation(enSideBarMenue.Inventory);
             lblCurrentDashboard.Text = "Inventory";
         }
-
         private void btnPointOfSale_Click(object sender, EventArgs e)
         {
             if (CurrentMenue != enSideBarMenue.POS)
@@ -221,7 +189,6 @@ namespace POS_IMS_Project
             SideBarActivation(enSideBarMenue.POS);
             lblCurrentDashboard.Text = "Point Of Sale";
         }
-
         private void btnTransactions_Click(object sender, EventArgs e)
         {
             if (CurrentMenue != enSideBarMenue.Transaction)
@@ -232,7 +199,6 @@ namespace POS_IMS_Project
             SideBarActivation(enSideBarMenue.Transaction);
             lblCurrentDashboard.Text = "Transactions";
         }
-
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             if (CurrentMenue != enSideBarMenue.Dashboard)

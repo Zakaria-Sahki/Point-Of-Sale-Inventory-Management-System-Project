@@ -110,7 +110,6 @@
             this.btnSuppliers.Text = "Suppliers";
             this.btnSuppliers.UseVisualStyleBackColor = false;
             this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
-            this.btnSuppliers.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnSuppliers_MouseUp);
             // 
             // panel2
             // 
@@ -146,7 +145,6 @@
             this.btnTransactions.Text = "Transactions";
             this.btnTransactions.UseVisualStyleBackColor = false;
             this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
-            this.btnTransactions.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnTransactions_MouseUp);
             // 
             // btnInventory
             // 
@@ -161,7 +159,6 @@
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = false;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            this.btnInventory.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnInventory_MouseUp);
             // 
             // btnPointOfSale
             // 
@@ -176,7 +173,6 @@
             this.btnPointOfSale.Text = "Point Of Sale";
             this.btnPointOfSale.UseVisualStyleBackColor = false;
             this.btnPointOfSale.Click += new System.EventHandler(this.btnPointOfSale_Click);
-            this.btnPointOfSale.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnPointOfSale_MouseUp);
             // 
             // btnDashboard
             // 
@@ -191,7 +187,6 @@
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            this.btnDashboard.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnDashboard_MouseUp);
             // 
             // label1
             // 
