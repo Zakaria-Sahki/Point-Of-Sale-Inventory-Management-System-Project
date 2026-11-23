@@ -31,11 +31,11 @@ namespace POS_IMS_Project.Dashboard.View_Models
             };
 
             Series = models.Select((model, index) =>
-                new PieSeries<double>
+                new PieSeries<decimal>
                 {
                     Name = model.CategoryName,
 
-                    Values = new double[]
+                    Values = new decimal[]
                     {
                         model.Percentage
                     },
@@ -43,9 +43,10 @@ namespace POS_IMS_Project.Dashboard.View_Models
                     Fill = new SolidColorPaint(
                         colors[index % colors.Length]),
 
-                    InnerRadius = 100,
+                    InnerRadius = 50,
                     ToolTipLabelFormatter = point => $"{point.Coordinate.PrimaryValue:F2}%"
                 }).ToArray();
+    
         }
     }
 }

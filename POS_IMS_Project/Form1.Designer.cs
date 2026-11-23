@@ -190,6 +190,7 @@
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnDashboard_MouseUp);
             // 
             // label1

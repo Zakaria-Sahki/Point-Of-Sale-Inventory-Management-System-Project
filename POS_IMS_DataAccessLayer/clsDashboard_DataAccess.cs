@@ -92,22 +92,17 @@ namespace POS_IMS_DataAccessLayer
                 using (SqlConnection connection = new SqlConnection(clsSettingsDataAccess.ConnectionString))
                 {
                     connection.Open();
-            using (SqlCommand command = new SqlCommand("SP_GetSalesByCategoryReports", connection))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                connection.Open();
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        result.Add(new SalesByCategory
-                        {
-                            CategoryName = Convert.ToString(reader["CategoryName"]),
-                            Percentage = Convert.ToSingle(reader["Percentage"])
-                        });
-                    }
-                }
+                    using (SqlCommand command = new SqlCommand("SP_GetSalesByCategoryReports", connection)) {
+                        command.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = command.ExecuteReader()) {
+                            while (reader.Read()) {
+                                result.Add(new SalesByCategory
+                                {
+                                    CategoryName = Convert.ToString(reader["CategoryName"]),
+                                    Percentage = Convert.ToDecimal(reader["Percentage"])
+                                });
+                            }
+                        }
                     }
                 }
 

@@ -1,4 +1,5 @@
 ﻿using POS_IMS_BusinessLayer;
+using POS_IMS_Project.Dashboard;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -230,6 +231,17 @@ namespace POS_IMS_Project
             }
             SideBarActivation(enSideBarMenue.Transaction);
             lblCurrentDashboard.Text = "Transactions";
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            if (CurrentMenue != enSideBarMenue.Dashboard)
+            {
+
+                LoadUserControl(new uctrlDashboard());
+            }
+            SideBarActivation(enSideBarMenue.Dashboard);
+            lblCurrentDashboard.Text = "Dashboard";
         }
     }
 }

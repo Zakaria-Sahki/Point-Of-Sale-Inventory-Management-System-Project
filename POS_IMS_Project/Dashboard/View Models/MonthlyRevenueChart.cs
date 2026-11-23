@@ -41,7 +41,7 @@ namespace POS_IMS_Project.Dashboard.View_Models
         {
             Name = "Revenue",
             Values = revenue,
-            MaxBarWidth = 80
+            MaxBarWidth = 45
         }
             };
 

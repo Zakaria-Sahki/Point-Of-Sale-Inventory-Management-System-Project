@@ -9,6 +9,6 @@ namespace DTOS.Models
     public class SalesByCategory
     {
         public string CategoryName { get; set; }
-        public float Percentage { get; set; }
+        public decimal Percentage { get; set; }
     }
 }
