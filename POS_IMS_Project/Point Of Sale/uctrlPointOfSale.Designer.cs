@@ -51,6 +51,7 @@
             this.pbSearchPicture = new System.Windows.Forms.PictureBox();
             this.txtSearchForProduct = new System.Windows.Forms.TextBox();
             this.flpProductCards = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.HeaderOfSelectedProducts.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -232,6 +233,7 @@
             // pnlSimpleFilterSearching
             // 
             this.pnlSimpleFilterSearching.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSimpleFilterSearching.Controls.Add(this.label2);
             this.pnlSimpleFilterSearching.Controls.Add(this.label3);
             this.pnlSimpleFilterSearching.Controls.Add(this.cbBrand);
             this.pnlSimpleFilterSearching.Controls.Add(this.cbCategory);
@@ -247,17 +249,17 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(35, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 29);
+            this.label3.Size = new System.Drawing.Size(195, 29);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Filter:";
+            this.label3.Text = "Filter by Category:";
             // 
             // cbBrand
             // 
             this.cbBrand.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBrand.FormattingEnabled = true;
-            this.cbBrand.Location = new System.Drawing.Point(612, 26);
+            this.cbBrand.Location = new System.Drawing.Point(752, 26);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(418, 37);
+            this.cbBrand.Size = new System.Drawing.Size(278, 37);
             this.cbBrand.TabIndex = 4;
             this.cbBrand.SelectedIndexChanged += new System.EventHandler(this.cbBrand_SelectedIndexChanged);
             // 
@@ -265,9 +267,9 @@
             // 
             this.cbCategory.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(137, 26);
+            this.cbCategory.Location = new System.Drawing.Point(249, 26);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(418, 37);
+            this.cbCategory.Size = new System.Drawing.Size(278, 37);
             this.cbCategory.TabIndex = 3;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -327,6 +329,16 @@
             this.flpProductCards.Size = new System.Drawing.Size(1108, 640);
             this.flpProductCards.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(566, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 29);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Filter by Brand:";
+            // 
             // uctrlPointOfSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -377,5 +389,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flpBasketItems;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Label label2;
     }
 }

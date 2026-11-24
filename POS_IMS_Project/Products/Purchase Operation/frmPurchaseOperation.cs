@@ -29,9 +29,8 @@ namespace POS_IMS_Project
             this.StartPosition = FormStartPosition.CenterScreen;
             _productID = ProductID;
         }
+        private void RefreshForm() {
 
-        private void frmPurchaseOperation_Load(object sender, EventArgs e)
-        {
             _product = clsProduct.GetProductByID(_productID);
             if (_product == null)
             {
@@ -40,23 +39,24 @@ namespace POS_IMS_Project
                 return;
             }
 
-            
+
             lblProductName.Text = _product.ProductName;
             txtQuantityReceive.Enabled = false;
             txtUnitPrice.Enabled = false;
             tbPurchaseInfo.Enabled = false;
         }
-
+        private void frmPurchaseOperation_Load(object sender, EventArgs e)
+        {
+            RefreshForm();
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tbPurchaseInfo;
         }
-
         private void txtQuantityReceive_TextChanged(object sender, EventArgs e)
         {
 
@@ -114,7 +114,6 @@ namespace POS_IMS_Project
             tbPurchaseInfo.Enabled = true;
             txtUnitPrice.Enabled = true;
         }
-
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUnitPrice.Text.Trim()))
@@ -139,10 +138,17 @@ namespace POS_IMS_Project
 
                     MessageBox.Show("Data failed to save.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }  
+                }
+                else {
+
+                    MessageBox.Show("Purchase Operation Done Successfuly", "Purchase Operation Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtQuantityReceive.Enabled = false;
+                    txtUnitPrice.Enabled = false;
+                    btnPurchase.Enabled = false;
+                    btnCancel.Enabled = true;
+                }
             }
         }
-
         private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',';
